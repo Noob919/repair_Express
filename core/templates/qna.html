@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='\apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='\favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='\favicon-16x16.png') }}">
+        <link rel="manifest" href="\site.webmanifest">
+    <title>FAQs</title>
+</head>
+
+<body>
+    <!-- navbar starts here-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="{{ url_for('index_page') }}">RepairXpress</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('getstatus_page') }}">Get Status<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ url_for('replacement_page') }}">Replacement</a>
+                      <a class="dropdown-item" href="{{ url_for('repairment_page') }}">Repairment</a>
+                      <a class="dropdown-item" href="{{ url_for('software_page') }}">Software Update</a>
+                       
+                    </div>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contact_page') }}">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about_page') }}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index_page') }}">Back</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+      <br>
+    <!-- navbar end here-->
+    <div class="container">
+        <div class="card">
+            <h5 class="card-header">What is my token number and how i can find it?</h5>
+            <div class="card-body">
+                 
+                <p class="card-text">It is serial that generate with your slip of submission and you can find it it right corner of your submission slip.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-3">
+        <div class="card">
+             <h5 class="card-header">What are the terms and condition in which  my phone will replace in free?</h5>
+            <div class="card-body">
+                
+                <p class="card-text">Your device must be in warranty period of one year.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-3">
+        <div class="card">
+             <h5 class="card-header">What are the terms and condition in which  my phone will repair in free?</h5>
+            <div class="card-body">
+             
+                <p class="card-text">Your device must be in warranty period of one year. or otherwise you have insurance of your phone which extend your warranty period for unother one year.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+             <h5 class="card-header">How to make the payment?</h5>
+            <div class="card-body">
+                <p class="card-text">You may make the payment via credit/debit card, bank transfer</p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-3">
+        <div class="card">
+             <h5 class="card-header">Where is your company located? </h5>
+            <div class="card-body">
+    
+                <p class="card-text">our headoffice is based in Bangalore</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="footer-copyright text-center py-3 my-5">© 2020 Copyright:
+        <a href="https://github.com/Noob919">Krypton Industries</a>
+    </div>
+</body>
+
+</html>
