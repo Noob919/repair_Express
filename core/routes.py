@@ -1,5 +1,7 @@
-from core import app
-from flask import render_template
+from core import app,db
+from flask import render_template, request
+from core.models import Repair
+from core.forms import  RepairmentForm
 
 @app.route("/")
 @app.route("/home")
@@ -15,9 +17,20 @@ def getstatus_page():
 def replacement_page():
     return render_template('replacement.html')
 
-@app.route('/repairment')
+@app.route('/repairment', methods= ['GET', 'POST'])
 def repairment_page():
-    return render_template('repairment.html')
+    repair_form = RepairmentForm()
+    if request.method == 'POST':
+        repair = Repair(name = repair_form.name.data,
+        email_address = repair_form.email_address.data,
+        phone_model = repair_form.phone_model.data,
+        warrenty =  repair_form.warrenty.data,
+        desc_Repair = repair_form.desc_Repair.data,
+        address = repair_form.address.data)
+        db.session.add(repair)
+        db.session.commit()
+
+    return render_template('repairment.html', form = repair_form)
 
 
 @app.route('/softwareupdate')
