@@ -1,5 +1,6 @@
+
 from core import app,db
-from flask import render_template, request
+from flask import render_template, request,flash, redirect
 from core.models import Repair
 from core.forms import  RepairmentForm
 
@@ -29,8 +30,11 @@ def repairment_page():
         address = repair_form.address.data)
         db.session.add(repair)
         db.session.commit()
+        flash('Your form is submitted', category = 'info') 
+          
 
-    return render_template('repairment.html', form = repair_form)
+    repair_items =  Repair.query.all()
+    return render_template('repairment.html',form = repair_form, repair_items = repair_items) 
 
 
 @app.route('/softwareupdate')
